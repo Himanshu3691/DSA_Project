@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'dsa-static/css/about.css' %}">
+</head>
+<body>
+    <h1>this is a about page</h1>
+    <form action="vali/" method="post">
+        {% csrf_token %}
+        Name: <input type="text" name="name">
+        <input type="submit" value="submit">
+    </form>
+    <a href="/dsa/"><button>Home Page</button></a>
+</body>
+<script src="{% static 'dsa-static/js/about.js' %}" ></script>
+</html>
