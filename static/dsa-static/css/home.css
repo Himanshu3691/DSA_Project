@@ -1,4 +1,14 @@
  /* The Modal (background) */
+
+.users{
+  margin-top: 50px;
+}
+ .register-new-user{
+  cursor: pointer;
+ }
+ .add-users{
+  display: none;
+ }
  .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -54,3 +64,7 @@
     from {transform: scale(0)}
     to {transform: scale(1)}
   } 
+
+.text-align{
+  text-align:center;
+  }

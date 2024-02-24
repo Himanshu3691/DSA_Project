@@ -1,11 +1,13 @@
 from django.urls import path
-from . import views
-from dsa import views 
+from .views import * 
 
 urlpatterns = [
-    path("", views.index, name="index"),
-    path("about/", views.about, name="about"),
-    path('home/', views.home, name='home'),
-    path('about/vali/', views.vali, name='vali'),
+    path("", home, name="home"),
+    path("about/", about, name="about"),
+    path('about/vali/', vali, name='vali'),
+    path('user_pro/<int:id>/', UserPro.as_view(), name='user_pro'),
+    path('code/<int:id>', Code.as_view(), name='code'),
+    path('register/', register, name='register'),
+
 
 ]
