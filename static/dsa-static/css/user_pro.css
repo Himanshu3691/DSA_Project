@@ -1,0 +1,37 @@
+/* Custom CSS for the specific page */
+body {
+    background-color: rgb(58, 58, 58);
+    color: #fff; /* Text color for better contrast */
+  }
+  
+  .main {
+    padding: 8px;
+  }
+  
+  /* .container {
+    max-width: 80px;
+    margin: 0 auto;
+  } */
+  
+  .users {
+    text-align: left;
+    
+}
+  
+  .users h1 {
+    margin: 10px 0;
+  }
+  
+  .users a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .users a:hover {
+    background-color: #45a049;
+  }
+  
