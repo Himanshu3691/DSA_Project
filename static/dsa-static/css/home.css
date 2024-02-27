@@ -1,4 +1,18 @@
 /* Custom CSS for user-friendly table and calming effect */
+
+.add-users {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.982);
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  z-index: 9999;
+  color: black;
+}
 body {
   background-color: rgb(58, 58, 58);
   color: #fff; /* Text color for better contrast */
@@ -7,6 +21,9 @@ body {
 .main {
   padding: 20px;
 }
+
+
+
 
 .container {
   max-width: 800px;
@@ -47,10 +64,16 @@ body {
 /* Additional styles for the registration section */
 .register-new-user {
   margin-top: 20px;
-  font-size: 18px;
-  margin-left: 25px;
+  
+  margin-left: 30%;
+  
 }
 
+.img{
+  width: 35px;
+  height: 35px;
+  
+}
 .add-users {
   margin-top: 20px;
   margin-left: 20px;
@@ -102,3 +125,19 @@ body {
 .alert {
   margin-bottom: 20px;
 }
+
+
+  .add-users {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.701);
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    z-index: 9999;
+    color: black;
+  }
+
