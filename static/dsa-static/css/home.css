@@ -22,8 +22,14 @@ body {
   padding: 20px;
 }
 
-
-
+.text-align{
+  text-transform: sentence-case;
+  /* color: red; */
+}
+.text-mod{
+  text-transform: capitalize;
+  
+}
 
 .container {
   max-width: 800px;

@@ -9,6 +9,9 @@ urlpatterns = [
     path('user_pro/<int:id>/coderegister/', coderegister, name='coderegister'),
     path('code/<int:id>', Code.as_view(), name='code'),
     path('register/', register, name='register'),
+    path('search/', search, name='search'),
+    path('login/', login, name='login'),
+    
 
 
 ]

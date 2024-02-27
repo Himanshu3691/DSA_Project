@@ -56,8 +56,8 @@
             {% for user in context %}
               <tr class ='text-align'>
                 <td style="display:none;">{{ user.id }}</td>
-                <td class ='text-align'>{{ user.First }}</td>
-                <td class ='text-align'>{{ user.last }}</td>
+                <td class ='text-align  text-mod'>{{ user.First }}</td>
+                <td class ='text-align text-mod'>{{ user.last }}</td>
                 <td class ='text-align'>{{ user.email }}</td>
                 <td class ='text-align'>{{ user.phone_no }}</td>
                 <td class ='text-align'>
@@ -68,6 +68,18 @@
           </tbody>
         </table>
       </div>
+    </div>
+    <div class="login-container" style="text-align: center;">
+      <div class="login-form">
+        <h3>Login</h3>
+        <form action="login/" method="post">
+          {% csrf_token %}
+          <label for="first">First Name</label><input type="text" name="first" placeholder="First Name">
+          <label for="email">Email</label><input type="text" name="email" placeholder="Email">
+          <input type="submit" value="Login">
+        </form>
+      </div>
+
     </div>
     
 
