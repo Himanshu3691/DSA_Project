@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from .models import User
+from .models import User,UserCode
 
 from django.views import View
 
@@ -23,7 +23,7 @@ class UserPro(View):
 class Code(View):
     def get(self, request, id):
         code_objs = User.objects.get(id = id).user_code.all()
-        print(code_objs,"----------------code_objs>>>>>>>>>")
+        # print(code_objs,"----------------code_objs>>>>>>>>>")
         return render(request, 'user_code.html',{"context":code_objs})
 
 
@@ -37,8 +37,6 @@ def vali(request):
 
 def register(request):
     data_send = False
-    
-    
     if request.method == 'POST':
         fname = request.POST.get('fname')
         lname = request.POST.get('lname')
@@ -54,4 +52,18 @@ def register(request):
     users= User.objects.all()
     users_data = {"context":users,'data_send':data_send}
     return render(request,"home.html",users_data)
+    
+def coderegister(request,id):
+    if request.method == 'POST':
+        day = request.POST.get('day')
+        code = request.POST.get('code')
+        id = id
+        # print(id)
+        # print(day,code)
+        user_data = User.objects.get(id = id)
+        # print(user_data)
+        new_code = UserCode(user_code = user_data, day = day , code = code)
+        new_code.save()
+        return redirect('/dsa/')
+    return render(request,'user_pro.html')
     

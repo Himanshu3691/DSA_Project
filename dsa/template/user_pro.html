@@ -15,6 +15,17 @@
         <a href="{% url 'code' context.id %}">Code</a>
       </div>
     </div>
+    <div class="add-code">
+      <div class="form-code">
+        <form action="coderegister/" method="post">
+          {% csrf_token %}
+          <label for="day">Enter Day</label><input type="text" id="day" name="day">
+
+          <label for="code">Add code</label><textarea name="code" id="code" cols="30" rows="10"></textarea>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
   </div>
 
   {% comment %} <a href="/dsa/about"><button>About Page</button></a> {% endcomment %}

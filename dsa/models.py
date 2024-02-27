@@ -12,6 +12,7 @@ class User(models.Model):
     
 class UserCode(models.Model):
     user_code = models.ForeignKey(User,blank = True, null = True, on_delete = models.CASCADE, related_name = "user_code")
+    day = models.CharField(max_length = 50, blank = True, null = True)
     code = models.CharField(max_length = 50, blank = True, null = True)
 
     def __str__(self):
