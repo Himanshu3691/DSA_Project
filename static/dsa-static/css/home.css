@@ -71,7 +71,7 @@ body {
 .register-new-user {
   margin-top: 20px;
   
-  margin-left: 30%;
+  margin-left: 80%;
   
 }
 
@@ -133,17 +133,27 @@ body {
 }
 
 
+  .login-form{
+    background-color: rgba(255, 255, 255, 0.779);
+    padding: 20px;
+    border: 2px solid #ccc;
+    color: black;
+
+  }
+
+  
+  /* <style> */
   .add-users {
     display: none;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.701);
+    background-color: rgba(255, 255, 255, 0.779);
     padding: 20px;
     border: 2px solid #ccc;
     border-radius: 8px;
     z-index: 9999;
     color: black;
   }
-
+/* </style> */

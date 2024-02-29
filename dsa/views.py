@@ -35,9 +35,9 @@ class UserPro(View):
             name = 'test'
             email = 'test@gmail.com'
         data = {"context":user_data,'login':login}
+       
         # print(name,email,"-----------------global wali ahi is baaar")
         return render(request, 'user_pro.html',data)
-    
 class Code(View):
     def get(self, request, id):
         code_objs = User.objects.get(id = id).user_code.all()
@@ -116,5 +116,4 @@ def login(request):
             return redirect('/dsa/')
         else:
             return HttpResponse("Invalid user")
-        
     return redirect('/dsa/')
