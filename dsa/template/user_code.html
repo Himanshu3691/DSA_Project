@@ -4,14 +4,21 @@
   {{ section.title }}
 {% endblock %}
 {% block content2 %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css" />
+  <link rel="stylesheet" href="{% static 'dsa-static/css/user_code.css' %}" />
+  <script defer src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
   <div class="main">
     <div class="container">
       <div class="users">
         {% for code in context %}
-          <h1>{{ code.user_code.First }}</h1>
+          <h1 class="text">{{ code.user_code.First }}</h1>
           {% comment %} <h1>{{ code.id }}</h1> {% endcomment %}
-          <h1>{{ code.day }}</h1>
-          <h1>{{ code.code }}</h1>
+          <h1 class="text">{{ code.day }}</h1>
+          <!-- <h1>{{ code.code }}</h1> -->
+          <pre class="language-python precla">
+            <code class="codecla">{{ code.code }}</code>
+          </pre>
         {% endfor %}
       </div>
     </div>

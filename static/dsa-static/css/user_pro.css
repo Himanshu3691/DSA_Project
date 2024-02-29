@@ -1,7 +1,7 @@
 /* Custom CSS for the specific page */
 body {
     background-color: rgb(58, 58, 58);
-    color: #fff; /* Text color for better contrast */
+    color: #ffffff; /* Text color for better contrast */
   }
   
   .main {
@@ -15,7 +15,12 @@ body {
   
   .users {
     text-align: left;
+    /* text-transform: capitalize; */
     
+}
+.name{
+  text-transform: capitalize;
+
 }
   
   .users h1 {
