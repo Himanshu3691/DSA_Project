@@ -1,4 +1,4 @@
-console.log("this is the home page js");
+// console.log("this is the home page js");
 // add_users = document.getElementById('add-users');
 // register_txt = document.getElementById('register-new-user');
 
@@ -29,12 +29,14 @@ document.getElementById('register-new-user').addEventListener('click', function(
 
 document.getElementById('close-popup').addEventListener('click', function() {
   document.getElementById('add-users').style.display = 'none';
+  register_txt.style.display = 'block'
 });
 
 document.getElementById('toggle-link').addEventListener('click', function(event) {
   event.preventDefault();
   var signupContainer = document.querySelector('.signup-container');
   var loginContainer = document.querySelector('.login-container');
+  console.log("ma toih chal rtaha huy bahiweh");
 
   if (signupContainer.style.display === 'none') {
     signupContainer.style.display = 'block';
