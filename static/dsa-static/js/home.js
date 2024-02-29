@@ -1,4 +1,4 @@
-// console.log("this is the home page js");
+console.log("this is the home page js");
 // add_users = document.getElementById('add-users');
 // register_txt = document.getElementById('register-new-user');
 
