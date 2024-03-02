@@ -40,8 +40,8 @@
         <!-- <h3>Login</h3> -->
         <form action="login/" method="post">
           {% csrf_token %}
-          <label for="first">First Name</label><input type="text" name="first" placeholder="First Name" style="background-color:rgb(49, 48, 48);color: #ffffff;">
-          <label for="email">Email</label><input type="text" name="email" placeholder="Email" style="background-color:rgb(49, 48, 48);color: #ffffff;">
+          <label for="first">First Name</label><input type="text" name="first" placeholder="First Name" style="background-color:rgb(255, 255, 255);color: #000000;">
+          <label for="email">Email</label><input type="text" name="email" placeholder="Email" style="background-color:rgb(255, 255, 255);color: #000000;">
           <input type="submit" value="Login">
         </form>
       </div>
@@ -49,10 +49,10 @@
     <span class="signup-container" style="display: none;">
       <form action="register/" method="post">
         {% csrf_token %}
-        <label for="fname">First Name</label><input type="text" name="fname" placeholder="First Name"  style="background-color:rgb(49, 48, 48);color: #ffffff;" />
-        <label for="lname">Last Name</label><input type="text" name="lname" placeholder="Last Name"  style="background-color:rgb(49, 48, 48);color: #ffffff;" />
-        <label for="email">Email</label><input type="email" name="email" placeholder="Email"  style="background-color:rgb(49, 48, 48);color: #ffffff;"/>
-        <label for="phone">Phone</label><input type="text" name="phone" placeholder="Phone"  style="background-color:rgb(49, 48, 48);color: #ffffff;" />
+        <label for="fname">First Name</label><input type="text" name="fname" placeholder="First Name" style="background-color:rgb(255, 255, 255);color: #000000;" />
+        <label for="lname">Last Name</label><input type="text" name="lname" placeholder="Last Name" style="background-color:rgb(255, 255, 255);color: #000000;" />
+        <label for="email">Email</label><input type="email" name="email" placeholder="Email" style="background-color:rgb(255, 255, 255);color: #000000;" />
+        <label for="phone">Phone</label><input type="text" name="phone" placeholder="Phone" style="background-color:rgb(255, 255, 255);color: #000000;" />
         <input type="submit" value="Submit" />
       </form>
     </span>

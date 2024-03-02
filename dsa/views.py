@@ -42,7 +42,10 @@ class Code(View):
     def get(self, request, id):
         code_objs = User.objects.get(id = id).user_code.all()
         # print(code_objs,"----------------code_objs>>>>>>>>>")
-        return render(request, 'user_code.html',{"context":code_objs})
+        user_name= User.objects.get(id= id).First
+      
+        print(id,user_name,"x-x--xx--x-x-x-xx-x--")
+        return render(request, 'user_code.html',{"context":code_objs,"user_name":user_name})
 
 
 def vali(request):

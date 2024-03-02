@@ -2,3 +2,8 @@
   height: 60px;
   width: 500px;
 }
+.text_name{
+text-transform: capitalize;
+
+}
+
