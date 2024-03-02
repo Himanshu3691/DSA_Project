@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% block title %}
 {{ section.title }}
 {% endblock %}
@@ -10,30 +9,45 @@
   <div class="container">
     <div class="users">
 
-      <h1>{{ context.id }}</h1>
-      <h1>{{ context.First }}</h1>
-      <h1>{{ context.last }}</h1>
-      <h1>{{ context.email }}</h1>
-      <h1>{{ context.phone_no }}</h1>
+      <h1 class="big">Name={{ context.First }} {{ context.last }}</h1>
+  
+      <h1>Mail={{ context.email }}</h1>
+      <br>
+      <!-- <h1>{{ context.phone_no }}</h1> -->
       <a href="{% url 'code' context.id %}">Code</a>
     </div>
-  </div>
-  {% if login %}
+    <br>
 
-  <div class="add-code">
-    <div class="form-code">
-      <form action="coderegister/" method="post">
-        {% csrf_token %}
-        <label for="day">Enter Day</label><input type="text" id="day" name="day">
-
-        <label for="code">Add code</label><textarea name="code" id="code" cols="30" rows="10"></textarea>
-        <input type="submit" value="Submit">
-      </form>
+    {% if login %}
+    <div class="add-data-btn-div">
+      <!-- <button class="add-data-btn" onclick="openPopup()">Add Data</button> -->
+      <a onclick="openPopup()"><img class="img" src="{% static 'img/add.png'%}" alt="add code"></a>
     </div>
-  </div>
-  {% endif %}
+    <div id="add-data-popup" class="add-data-popup">
+      <span id="popup-title">
+        <h3>Add Code</h3>
+      </span>
+      <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <form action="coderegister/" method="post">
+          {% csrf_token %}
+          <label for="day">Enter Day:</label>
+          <input type="text" id="day" name="day" style="background-color:rgb(255, 255, 255);color: #000000;">
+          <br>
+          <label for="code">Add Code:</label>
+          <textarea name="code" id="code" cols="30" rows="10" style="background-color:rgb(255, 255, 255);color: #000000;"></textarea>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
 
-</div>
+    {% endif %}
+    </div>
+
+  </div>
+
+<script src="{% static 'dsa-static/js/user_pro.js' %}" ></script>
+
 
 {% comment %} <a href="/dsa/about"><button>About Page</button></a> {% endcomment %}
 {% endblock %}

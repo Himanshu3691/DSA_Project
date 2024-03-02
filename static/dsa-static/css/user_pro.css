@@ -7,18 +7,24 @@ body {
   padding: 8px;
 }
 
-/* .container {
-  max-width: 80px;
-  margin: 0 auto;
-} */
-
-.users {
-  text-align: left;
+.container {
+  max-width: 90%;
+  margin: 40px auto 2px auto; /* Fixed incorrect margin properties */
+  display: flex;
   
 }
 
+ .users {
+  text-align: left;
+  
+} 
+
 .users h1 {
   margin: 10px 0;
+}
+.big {
+  margin: 10px 0;
+  text-transform: capitalize;
 }
 
 .users a {
@@ -32,4 +38,101 @@ body {
 
 .users a:hover {
   background-color: #45a049;
+}
+
+
+
+/* Improved CSS for the pop-up form */
+
+.add-data-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color:  rgba(22, 22, 22, 0.779); /* Slightly transparent white background */
+  padding: 20px;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  z-index: 9999;
+  color: rgb(255, 255, 255);
+  width: 400px; /* Adjust width as needed */
+  max-width: 90%; /* Ensure it doesn't exceed the viewport width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+
+.close-btn {
+  float: right;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+.add-data-popup label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.add-data-popup input[type="text"],
+.add-data-popup textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.add-data-popup input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-data-popup input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.add-data-popup textarea {
+  height: 100px; /* Adjust height as needed */
+}
+
+.add-data-popup form {
+  margin: 0;
+}
+
+.add-data-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.add-data-btn:hover {
+  background-color: #45a049;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+.img{
+  width: 35px;
+  height: 35px;
+  
 }

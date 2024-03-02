@@ -11,15 +11,17 @@
   <div class="main">
     <div class="container">
       <div class="users">
-      <h1 class="text_name">{{user_name}}</h1>
+        
+        <h1 class="text_name">{{ user_name }}</h1>
+
         {% for code in context %}
-          {% comment %} <h1>{{ code.user_code.First }}</h1> {% endcomment %}
+          <h1>{{ code.user_code.First }}</h1>
           {% comment %} <h1>{{ code.id }}</h1> {% endcomment %}
           <h1>{{ code.day }}</h1>
           <pre class="language-python">
             <code>{{ code.code }}</code>
           </pre>
-
+          
           {% comment %} <h1>{{ code.code }}</h1> {% endcomment %}
         {% endfor %}
       </div>

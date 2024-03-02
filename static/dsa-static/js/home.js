@@ -51,8 +51,8 @@ document.getElementById('toggle-link').addEventListener('click', function(event)
   }
 });
 
-// Trigger the sign-in pop-up when the page is opened
-window.onload = function() {
-  document.querySelector('.signup-container').style.display = 'none';
-  document.getElementById('add-users').style.display = 'block';
-};
+// // Trigger the sign-in pop-up when the page is opened
+// window.onload = function() {
+//   document.querySelector('.signup-container').style.display = 'none';
+//   document.getElementById('add-users').style.display = 'block';
+// };
