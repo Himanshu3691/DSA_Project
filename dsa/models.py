@@ -17,3 +17,14 @@ class UserCode(models.Model):
 
     def __str__(self):
         return self.code
+    
+class Variable(models.Model):
+    user_var = models.ForeignKey(User,blank = True, null = True, on_delete = models.CASCADE, related_name = "user_var")
+    variable_type = models.CharField(max_length = 50, blank = True, null = True)
+    variable1 = models.CharField(max_length = 50, blank = True, null = True)
+    variable2 = models.CharField(max_length = 50,blank = True, null = True)
+    login = models.BooleanField(default = False)
+    
+
+    def __str__(self):
+        return self.variable_type

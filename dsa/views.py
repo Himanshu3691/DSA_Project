@@ -1,19 +1,13 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from .models import User,UserCode
+from .models import User,UserCode,Variable
+# from django
 
 from django.views import View
 
-name = 'test'
-email = 'test@gmail.com'
 def about(request):
     return render(request, "about.html")
 
-def login_status(name = 'test', email = 'test@gmail.com'):
-    return name, email
-def login_data():
-    name, email = login_status()
-    print(name,email,"-----------------")
 
 
 def home(request):
@@ -24,20 +18,18 @@ def home(request):
 
 class UserPro(View):
     def get(self, request, id):
-        global name,email
-        login = False
-        user_data = User.objects.get(id = id)
-        user_mail = User.objects.get(id = id).email
-        name,email = name.lower(),email.lower(  )
-        # print(name,email,user_data,user_mail,"-----------------")
-        if name == user_data.First and email == user_mail:
-            login = True
-            name = 'test'
-            email = 'test@gmail.com'
-        data = {"context":user_data,'login':login}
-       
-        # print(name,email,"-----------------global wali ahi is baaar")
+        
+        user_data = User.objects.filter(id = id).first()        
+        var_obj = Variable.objects.filter(user_var = user_data , login= True).first()
+        if var_obj:
+            data = {"context":user_data,'login':True}
+        else:
+            data = {"context":user_data,'login':False}
+    
         return render(request, 'user_pro.html',data)
+        
+        
+    
 class Code(View):
     def get(self, request, id):
         code_objs = User.objects.get(id = id).user_code.all()
@@ -96,24 +88,40 @@ def search(request):
         search = request.POST.get('search')
         search = search.lower()
         user_data = User.objects.filter(First = search)
-        print(user_data,"-----------------user_data")
+        # print(user_data,"-----------------user_data")
         return render(request, 'home.html',{"context":user_data})
     return render(request, 'home.html')
-
+ 
 def login(request):
     if request.method == 'POST':
-        global name,email
         first = request.POST.get('first')
         email = request.POST.get('email')
-        # print(email,first)
-        name = first # do not use these global variables
-        email = email # do not use these global variables
-        # print(email,name,"-----------------")
-        user_data = User.objects.filter(First = first.lower(),email = email)
-        # print(user_data,"-----------------user_data")
-    
-        if user_data:
+        user_data = User.objects.filter(First = first.lower(),email = email).first()
+        if not user_data:
+            return HttpResponse("Invalid user")
+        v_object = Variable.objects.filter(user_var = user_data).first()
+        
+        if not v_object:
+            var_obj = Variable.objects.create(user_var=user_data,variable_type = 'login',variable1 = first,variable2 = email,login = True)
             return redirect('/dsa/')
+    
+        if v_object:
+            v_object.login = True
+            v_object.save()
+            return redirect(f'/dsa/user_pro/{user_data.id}')
         else:
             return HttpResponse("Invalid user")
     return redirect('/dsa/')
+
+
+class UserLogout(View):
+    def get(self, request, id):
+        
+        user_data = User.objects.filter(id = id).first()        
+        var_obj = Variable.objects.filter(user_var = user_data).first()
+        var_obj.login = False
+        var_obj.save()
+      
+    
+        return redirect('/dsa/')
+        

@@ -29,6 +29,7 @@
       </span>
       <div class="popup-content">
         <span class="close-btn" onclick="closePopup()">&times;</span>
+        <a href="{% url 'logout' context.id %}">Logout</a>
         <form action="coderegister/" method="post">
           {% csrf_token %}
           <label for="day">Enter Day:</label>
@@ -43,6 +44,7 @@
 
     {% endif %}
     </div>
+    
 
   </div>
 

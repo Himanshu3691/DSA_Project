@@ -11,6 +11,7 @@ urlpatterns = [
     path('register/', register, name='register'),
     path('search/', search, name='search'),
     path('login/', login, name='login'),
+    path('logout/<int:id>/', UserLogout.as_view(), name='logout'),
     
 
 
