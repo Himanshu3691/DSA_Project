@@ -1,3 +1,28 @@
 body{
-    background-color: pink;  
+    background-color: rgb(58, 58, 58);  
+    color: #ffff;  
+}
+
+.redirect{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+        }
+.redirect[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    text-decoration:none;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #ffff;
+    text-transform: capitalize;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+}
+
+.redirect[type="submit"]:hover {
+     background-color: #45a049;
 }
