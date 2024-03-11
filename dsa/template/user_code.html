@@ -4,10 +4,11 @@
   {{ section.title }}
 {% endblock %}
 {% block content2 %}
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css" />
+  
   <link rel="stylesheet" href="{% static 'dsa-static/css/user_code.css' %}" />
-  <script defer src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
   <div class="main">
     <div class="container">
       <div class="users">
@@ -18,9 +19,11 @@
           {% comment %} <h1>{{ code.user_code.First }}</h1> {% endcomment %}
           {% comment %} <h1>{{ code.id }}</h1> {% endcomment %}
           <h1>{{ code.day }}</h1>
+          {% spaceless %}
           <pre class="language-python">
             <code>{{ code.code }}</code>
           </pre>
+          {% endspaceless %}
           
           {% comment %} <h1>{{ code.code }}</h1> {% endcomment %}
         {% endfor %}
